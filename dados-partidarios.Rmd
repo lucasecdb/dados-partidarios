@@ -1,0 +1,17 @@
+---
+title: "Dados partidários"
+---
+
+```{r}
+dados = read.csv("despesas_2018_fundo-partidario_BRASIL.csv", stringsAsFactors = F)
+```
+
+```{r}
+resultado = dados %>%
+  filter(DS_TP_ESPERA_PARTIDARIA == "ESTADUAL")
+```
+
+```{r}
+resultado %>% pull(SG_PARTIDO) %>% unique %>% paste(collapse = "','")
+```
+
